@@ -29,13 +29,13 @@ const projects = [
   {
     id: "comercio",
     n: "03",
-    title: "Comercio bajo control",
+    title: "JRS Automation · Tienda real",
     type: "E-COMMERCE · INVENTARIO",
     description:
-      "Catálogo, carrito y control de existencias conectados en una experiencia de compra clara.",
-    tech: "React · TypeScript · Reglas de negocio",
+      "La plataforma comercial en producción: catálogo industrial, búsqueda, carrito, pedidos y cotizaciones.",
+    tech: "Next.js · TypeScript · Supabase · PostgreSQL",
     icon: "shop",
-    metric: "De catálogo a pedido",
+    metric: "Software en producción",
   },
   {
     id: "movil",
@@ -43,10 +43,10 @@ const projects = [
     title: "Una interfaz que se siente",
     type: "MÓVIL · EXPERIENCIAS 3D",
     description:
-      "Física elástica, materiales procedurales y respuesta al tacto en una experiencia adaptable.",
+      "Dos experiencias: una pelota que responde al tacto y un universo 3D con navegación libre y mundos por descubrir.",
     tech: "Three.js · WebGL · React · Multitáctil",
     icon: "orb",
-    metric: "Toca, comprime, explora",
+    metric: "Toca. Viaja. Descubre.",
   },
 ];
 export function Icon({ kind }: { kind: string }) {
@@ -171,8 +171,11 @@ export default function App() {
               )}
             </Suspense>
             <div className="demo-note">
-              Demo de portafolio con datos ficticios. Las integraciones de
-              producción se representan mediante simulaciones locales.
+              {page === "comercio"
+                ? "La tienda abre el sitio real de JRS Automation. El laboratorio de inventario utiliza productos ficticios y pedidos de prueba."
+                : page === "movil"
+                  ? "Experiencias web adaptables al móvil. El universo guarda únicamente el progreso de exploración en este navegador."
+                  : "Demo de portafolio con datos ficticios. Las integraciones de producción se representan mediante simulaciones locales."}
             </div>
           </>
         ) : (
@@ -250,7 +253,10 @@ export default function App() {
                       <p>{p.description}</p>
                       <div className="card-stack">{p.tech}</div>
                       <div className="card-cta">
-                        Abrir demo <span>→</span>
+                        {p.id === "comercio"
+                          ? "Explorar tienda real"
+                          : "Abrir demo"}{" "}
+                        <span>→</span>
                       </div>
                     </div>
                   </a>

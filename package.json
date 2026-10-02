@@ -17,6 +17,7 @@
     "@tesseract.js-data/eng": "1.0.0",
     "@tesseract.js-data/spa": "1.0.0",
     "pdfjs-dist": "6.3.289",
+    "lucide-react": "1.24.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "tesseract.js": "7.0.0",

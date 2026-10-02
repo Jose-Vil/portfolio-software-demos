@@ -1,8 +1,10 @@
 # Seguridad de la demo
 
-Esta es una aplicación demostrativa con datos ficticios. No contiene credenciales, certificados, datos de clientes, configuraciones de producción ni historial de repositorios operativos. No se debe incorporar información sensible para probarla.
+El código de este portafolio y sus demos locales no contiene credenciales, certificados, datos de clientes, configuraciones de producción ni historial de repositorios operativos. No se debe incorporar información sensible para probar las demos. La sección Comercio integra el sitio público real de JRS Automation desde su dominio; ese servicio conserva sus propias políticas y operaciones.
 
 Los archivos que el visitante seleccione se procesan en su navegador. La aplicación no implementa subida a un servidor. El alojamiento sí recibe las solicitudes normales de recursos estáticos; consulta la política de privacidad de GitHub para ese servicio.
+
+La escena del universo guarda únicamente el estado de sus coleccionables en localStorage, con claves propias del portafolio. No incluye los recuerdos, archivos personales ni pistas de audio del proyecto original.
 
 Antes de publicar cambios:
 

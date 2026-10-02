@@ -1,6 +1,6 @@
 # Arquitectura
 
-La aplicación es estática: React + TypeScript + Vite, sin backend, credenciales ni datos productivos.
+El portafolio es estático: React + TypeScript + Vite, sin backend propio ni credenciales. Sus demos usan datos ficticios; la tienda real se muestra desde el dominio de JRS Automation.
 
 ```mermaid
 flowchart LR
@@ -18,6 +18,11 @@ flowchart LR
     A --> M[Entradas de puntero / teclado]
     M --> N[Física elástica]
     N --> O[WebGL / Canvas]
+    A --> P[Marco de JRS Automation]
+    P --> Q[Sitio real en dominio externo]
+    A --> R[Universo bajo demanda]
+    R --> S[Galaxia y navegación WebGL]
+    S --> T[Progreso local de exploración]
 ```
 
 ## Documentos
@@ -34,14 +39,20 @@ Las evidencias de precio de marketplace se conservan como contexto. Los importes
 
 ## Comercio
 
+La vista principal integra `https://www.jrsautomation.com.mx/` y su ruta `/catalogo`. El visitante puede navegar el sitio real o abrirlo en otra pestaña. No se copian sus credenciales, conexiones ni datos operativos al repositorio público. Los enlaces directos siguen disponibles si el navegador o el sitio externo limitan el marco integrado.
+
+En el laboratorio independiente, los productos son ficticios:
+
 La validación del carrito ocurre completa antes de calcular el nuevo estado del inventario. Cada cambio incrementa la versión. Un ajuste con una versión obsoleta se rechaza. El botón de cambio concurrente permite reproducir este escenario. En producción se requiere una operación atómica en la base de datos y autorización en servidor.
 
 ## 3D
 
 Los contactos táctiles o de puntero alimentan un modelo elástico. Three.js renderiza materiales y texturas generados localmente. La escena limita la resolución de renderizado y limpia recursos al desmontarse. Si WebGL no está disponible, se ofrece un renderizador Canvas. El teclado permite probar la compresión sin usar el ratón.
 
+La segunda opción carga el universo original adaptado: galaxia de partículas, núcleo cristalino, planetas, meteoros, constelaciones y mundos pequeños. Sus módulos generan las geometrías y texturas con Three.js. La entrada abre una escena que ocupa la ventana, con viaje inicial, navegación libre y doce coleccionables. El progreso se guarda con claves propias del portafolio en localStorage; un navegador que bloquee ese almacenamiento permite seguir explorando. Escape y Volver cierran la escena y devuelven el foco. La experiencia necesita WebGL y presenta un mensaje si no puede crearlo.
+
 ## Despliegue
 
-El build se verificó localmente y se publica como archivos estáticos en la rama `gh-pages`. GitHub Pages sirve esa rama sin conexiones a servicios operativos.
+El build se verifica localmente y se publica como archivos estáticos en la rama `gh-pages`. GitHub Pages sirve el portafolio; únicamente el marco de la tienda abre el sitio externo de producción y sus servicios propios.
 
 El ejemplo de workflow incluido en `docs/github-actions.example.yml` muestra cómo verificar tipos, reglas de negocio y contenido público, generar recursos OCR y publicar el sitio. No está activo. Si se habilita en el futuro, solo el trabajo de despliegue necesita permisos de escritura en Pages e identidad OIDC. No usa secretos de aplicaciones operativas.
