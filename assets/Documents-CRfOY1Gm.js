@@ -1,4 +1,4 @@
-import{r as n,j as e,_ as D}from"./index-CjM6ONR3.js";const h=`DOCUMENTO DE DEMOSTRACION
+import{r as n,j as e,_ as D}from"./index-DT444vw2.js";const h=`DOCUMENTO DE DEMOSTRACION
 Folio: DEMO-2026-001
 Proveedor: Comercio Ejemplo
 Fecha: 2026-09-30
